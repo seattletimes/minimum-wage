@@ -8,14 +8,21 @@
 @import "seattletimes";
 @import "flexbox";
 
+body {
+  max-width: 600px;
+  font-family: @df-sans;
+}
+
 .row {
   .display-flex();
-  max-width: 600px;
+  padding-bottom: 5px;
+  max-width: 400px;
 
   .name {
     .flex(0 0 135px);
     text-align: right;
     padding-right: 10px;
+    font-size: 16px;
   }
 
   .bar-container {
@@ -23,21 +30,21 @@
 
     .bar-rent {
       float: left;
-      background: red;
-      height: 20px;
+      background: @st-dark-red;
+      height: 18px;
 
       &.affordable {
-        background: green;
+        background: @st-dark-green;
       }
     }
 
     .bar-other {
       float: left;
-      background: pink;
-      height: 20px;
+      background: @st-light-red;
+      height: 18px;
 
       &.affordable {
-        background: lightgreen;
+        background: @st-light-green;
       }
     }
   }
