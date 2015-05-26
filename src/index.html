@@ -13,13 +13,18 @@
     <div ng-controller="CityController" ng-cloak>
       <div ng-click="setWhen('')">NOW</div>
       <div ng-click="setWhen('15')">15</div>
-      <div class="row" ng-repeat="city in cities">
+      <div class="row" ng-repeat="city in cities" flip>
         <div class="name">{{city.name}}</div>
         <div class="bar-container">
-          <div class="bar-rent" ng-style="{ width: city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 35 }">
+          <div class="bar rent" delayed-style="{ width: city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
           </div>
-          <div class="bar-other" ng-style="{ width: 100 - city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 35 }">
+          <div class="bar other" delayed-style="{ width: 100 - city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
+            <span class="percent-label">{{city['percent' + when]}}%</span>
           </div>
+        </div>
+        <div class="info">
+          ${{city.rent}}
+          ${{city['minwage' + when]}}
         </div>
       </div>
     </div>

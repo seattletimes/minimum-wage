@@ -18,6 +18,10 @@ body {
   padding-bottom: 5px;
   max-width: 400px;
 
+  &.flipping {
+    transition: transform .5s ease-in-out .5s;
+  }
+
   .name {
     .flex(0 0 135px);
     text-align: right;
@@ -28,23 +32,31 @@ body {
   .bar-container {
     .flex(1);
 
-    .bar-rent {
+    .bar {
+      transition: width .5s linear, background .1s ease-in-out;
       float: left;
-      background: @st-dark-red;
       height: 18px;
+    }
+
+    .bar.rent {
+      background: @st-dark-red;
 
       &.affordable {
         background: @st-dark-green;
       }
     }
 
-    .bar-other {
-      float: left;
+    .bar.other {
       background: @st-light-red;
-      height: 18px;
+      font-size: 14px;
+      font-weight: bold;
 
       &.affordable {
         background: @st-light-green;
+      }
+
+      .percent-label {
+        padding-left: 3px;
       }
     }
   }
