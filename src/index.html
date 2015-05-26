@@ -11,15 +11,19 @@
   <body ng-app="minimum-wage">
 
     <div ng-controller="CityController" ng-cloak>
-      <div ng-click="setWhen('')">NOW</div>
-      <div ng-click="setWhen('15')">15</div>
+      <div class="title">What does $15/hr look like across America?</div>
+      <div class="chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat leo vitae purus laoreet, nec porttitor dolor pellentesque. Cras tempor diam et sapien venenatis convallis. Etiam sit amet purus in eros aliquam efficitur. Aenean ut nunc eget felis vehicula consequat eu vel est.</div>
+
+      Minimum wage:
+      <span class="button" ng-click="setWhen('')">Current</span>
+      <span class="button" ng-click="setWhen('15')">$15</span>
       <div class="row" ng-repeat="city in cities" flip>
         <div class="name">{{city.name}}</div>
         <div class="bar-container">
           <div class="bar rent" delayed-style="{ width: city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
           </div>
           <div class="bar other" delayed-style="{ width: 100 - city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
-            <span class="percent-label">{{city['percent' + when]}}%</span>
+            <div class="percent-label">{{city['percent' + when].split(".")[0]}}%</div>
           </div>
         </div>
         <div class="info">

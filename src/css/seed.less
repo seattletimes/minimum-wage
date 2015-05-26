@@ -11,6 +11,20 @@
 body {
   max-width: 600px;
   font-family: @df-sans;
+  font-size: 14px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.chatter {
+  font-size: 15px;
+  padding-bottom: 15px;
+  font-family: @df-serif;
 }
 
 .row {
@@ -23,10 +37,9 @@ body {
   }
 
   .name {
-    .flex(0 0 135px);
+    .flex(0 0 98px);
     text-align: right;
     padding-right: 10px;
-    font-size: 16px;
   }
 
   .bar-container {
@@ -35,7 +48,7 @@ body {
     .bar {
       transition: width .5s linear, background .1s ease-in-out;
       float: left;
-      height: 18px;
+      height: 20px;
     }
 
     .bar.rent {
@@ -48,7 +61,6 @@ body {
 
     .bar.other {
       background: @st-light-red;
-      font-size: 14px;
       font-weight: bold;
 
       &.affordable {
@@ -56,7 +68,9 @@ body {
       }
 
       .percent-label {
+        font-size: 13px;
         padding-left: 3px;
+        padding-top: 2px;
       }
     }
   }
