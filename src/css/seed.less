@@ -6,12 +6,31 @@
 }
 
 @import "seattletimes";
+@import "flexbox";
 
-.bar-container {
-  width: 100%;
+.row {
+  .display-flex();
+  max-width: 600px;
 
-  .bar-rent {
-    background: red;
-    height: 20px;
+  .name {
+    .flex(0 0 135px);
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .bar-container {
+    .flex(1);
+
+    .bar-rent {
+      float: left;
+      background: red;
+      height: 20px;
+    }
+
+    .bar-other {
+      float: left;
+      background: purple;
+      height: 20px;
+    }
   }
 }

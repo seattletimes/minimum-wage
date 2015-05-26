@@ -11,12 +11,12 @@
   <body ng-app="minimum-wage">
 
     <div ng-controller="CityController" ng-cloak>
-      <div ng-repeat="city in cities">
+      <div class="row" ng-repeat="city in cities">
         <div class="name">{{city.name}}</div>
         <div class="bar-container">
           <div class="bar-rent" ng-style="{ width: city.percent + '%' }">
           </div>
-          <div class="bar-other">
+          <div class="bar-other" ng-style="{ width: 100 - city.percent + '%' }">
           </div>
         </div>
       </div>
