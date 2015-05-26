@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <%= t.include("partials/_adHead.html") %>
+  </head>
+
+  <body ng-app="minimum-wage">
+
+    <div ng-controller="CityController" ng-cloak>
+      <div ng-repeat="city in cities">
+        <div class="name">{{city.name}}</div>
+        <div class="bar-container">
+          <div class="bar-rent" ng-style="{ width: city.percent + '%' }">
+          </div>
+          <div class="bar-other">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var cityData = <%= JSON.stringify(csv.minimum_wage_2015) %>
+    </script>
+    <script src="app.js"></script>
+    <% if (json.project.production) { %>
+    <%= !json.project.embedded ? t.include("partials/_adFoot.html") : "" %>
+    <%= t.include("partials/_workHere.html") %>
+    <% } %>
+  </body>
+</html>
