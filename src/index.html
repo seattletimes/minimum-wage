@@ -11,14 +11,25 @@
   <body ng-app="minimum-wage">
 
     <div ng-controller="CityController" ng-cloak>
-      <div class="title">What does $15/hr look like across America?</div>
+      <div class="title">What would $15/hr look like across America?</div>
       <div class="chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat leo vitae purus laoreet, nec porttitor dolor pellentesque. Cras tempor diam et sapien venenatis convallis. Etiam sit amet purus in eros aliquam efficitur. Aenean ut nunc eget felis vehicula consequat eu vel est.</div>
 
-      Minimum wage:
-      <span class="button" ng-click="setWhen('')">Current</span>
-      <span class="button" ng-click="setWhen('15')">$15</span>
+      <div class="toggle">
+        <span class="toggle-label">Minimum wage:</span>
+        <span class="button" ng-click="setWhen('')" ng-class="{ selected: when == '' }">Current</span>
+        <span class="button" ng-click="setWhen('15')" ng-class="{ selected: when == '15' }">$15</span>
+      </div>
+
+      <div class="row">
+        <div class="header name">City</div>
+        <div class="header rent">Monthly Rent (Bottom Quartile)</div>
+        <div class="header bar-container">Monthly Salary</div>
+        <div class="header minwage">Current Minimum Wage</div>
+      </div>
+
       <div class="row" ng-repeat="city in cities" flip>
         <div class="name">{{city.name}}</div>
+        <div class="rent">${{city.rent}}</div>
         <div class="bar-container">
           <div class="bar rent" delayed-style="{ width: city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
           </div>
@@ -26,12 +37,13 @@
             <div class="percent-label">{{city['percent' + when].split(".")[0]}}%</div>
           </div>
         </div>
-        <div class="info">
-          ${{city.rent}}
-          ${{city['minwage' + when]}}
+        <div class="minwage">
+          ${{city.minwage}}
         </div>
       </div>
     </div>
+    <div class="source"><em>Sources: U.S. Census Bureau, Seattle Times reporting</em></div>
+    <div class="credit">AUDREY CARLSEN / THE SEATTLE TIMES</div>
 
     <script>
       var cityData = <%= JSON.stringify(csv.minimum_wage_2015) %>
