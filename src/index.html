@@ -22,9 +22,12 @@
 
       <div class="row">
         <div class="header name">City</div>
-        <div class="header rent">Monthly Rent (Bottom Quartile)</div>
-        <div class="header bar-container">Monthly Salary</div>
-        <div class="header minwage">Current Minimum Wage</div>
+        <div class="header rent">Monthly Rent (Bottom 25%)</div>
+        <div class="header bar-container">
+          <span ng-if="when == ''">Current Monthly Salary</span>
+          <span ng-if="when == '15'">Projected Monthly Salary at $15/hr</span>
+        </div>
+        <div class="header minwage">Current Min. Wage</div>
       </div>
 
       <div class="row" ng-repeat="city in cities" flip>

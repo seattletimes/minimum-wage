@@ -12,6 +12,10 @@ body {
   max-width: 600px;
   font-family: @df-sans;
   font-size: 14px;
+
+  @media @mobile {
+    font-size: 13px;
+  }
 }
 
 .title {
@@ -28,7 +32,7 @@ body {
 }
 
 .toggle {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 
   .toggle-label {
     padding-right: 3px;
@@ -59,7 +63,8 @@ body {
 .row {
   .display-flex();
   padding-bottom: 5px;
-  max-width: 600px;
+  max-width: 475px;
+  margin: auto;
 
   &.flipping {
     transition: transform .5s ease-in-out .5s;
@@ -68,26 +73,49 @@ body {
   .header {
     font-weight: bold;
     font-size: 11px;
+    .display-flex();
+    align-items: center;
+    justify-content: center;
+
+    @media @mobile {
+      font-size: 10px;
+    }
   }
 
   .name {
     .flex(0 0 98px);
     text-align: right;
-    padding-right: 10px;
+
+    @media @mobile {
+      .flex(0 0 82px);
+    }
   }
 
   .rent {
-    .flex(0 0 98px);
+    .flex(0 0 90px);
     text-align: center;
+
+    @media @mobile {
+      .flex(0 0 78px);
+    }
   }
 
   .minwage {
-    .flex(0 0 53px);
+    .flex(0 0 62px);
     padding-left: 10px;
+    text-align: center;
+
+    @media @mobile {
+      .flex(0 0 57px);
+    }
   }
 
   .bar-container {
     .flex(1);
+
+    &.header {
+      text-align: center;
+    }
 
     .bar {
       transition: width .5s linear, background .1s ease-in-out;
