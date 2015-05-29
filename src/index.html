@@ -9,7 +9,7 @@
   </head>
 
   <body ng-app="minimum-wage">
-
+    <responsive-child interval="500">
     <div ng-controller="CityController" ng-cloak>
       <div class="title">$15/hour wage: How much difference does it make?</div>
       <div class="chatter">
@@ -50,6 +50,7 @@
     </div>
     <div class="source"><em>Sources: U.S. Census Bureau, Seattle Times reporting</em></div>
     <div class="credit">AUDREY CARLSEN / THE SEATTLE TIMES</div>
+    </responsive-child>
 
     <script>
       var cityData = <%= JSON.stringify(csv.minimum_wage_2015) %>
