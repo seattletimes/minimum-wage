@@ -14,7 +14,7 @@
       <div class="title">$15/hour wage: How much difference does it make?</div>
       <div class="chatter">
         <div>In Seattle and most other cities we looked at, an inexpensive apartment* is unaffordable to someone making the current minimum wage, far exceeding the accepted "rent burden" threshold of 30 percent of income.</div>
-        <div>At a $15 wage, an inexpensive apartment becomes affordable in most of these cities &mdash; though in the priciest ones, like Seattle, $15 still falls a bit short.</div>
+        <div>At a $15 wage, an inexpensive apartment becomes affordable in most of these cities &mdash; though in the priciest ones, like Seattle, it's still too much.</div>
         <div class="tiny">*At the 25th percentile of all rents in each city.</div>
       </div>
 
@@ -26,11 +26,11 @@
 
       <div class="row">
         <div class="header name"></div>
-        <div class="header minwage">Current min. wage (hourly)</div>
-        <div class="header rent">Monthly rent (bottom 25%)</div>
-        <div class="header bar-container">Rent as % of income</div>
-        <div class="header monthly" ng-if="when == ''">Gross monthly income</div>
-        <div class="header monthly" ng-if="when == '15'">Gross monthly income at $15/hr</div>
+        <div class="header minwage"><span>Current min. wage (hourly)</span></div>
+        <div class="header rent"><span>Monthly rent (bottom 25%)</span></div>
+        <div class="header bar-container"><span>Rent as % of income</span></div>
+        <div class="header monthly" ng-if="when == ''"><span>Gross monthly income</span></div>
+        <div class="header monthly" ng-if="when == '15'"><span>Gross monthly income at $15/hr</span></div>
       </div>
 
       <div class="row" ng-repeat="city in cities" flip>

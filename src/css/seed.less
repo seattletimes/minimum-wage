@@ -35,7 +35,6 @@ body {
   }
 
   .tiny {
-    font-style: italic;
     font-size: 12px;
     padding-bottom: 0;
   }
@@ -73,7 +72,6 @@ body {
 .row {
   .display-flex();
   padding-bottom: 5px;
-  // max-width: 500px;
   margin: auto;
 
   &.flipping {
@@ -84,8 +82,13 @@ body {
     font-weight: bold;
     font-size: 11px;
     .display-flex();
-    align-items: center;
-    justify-content: center;
+    .align-items(center);
+    .justify-content(center);
+
+    span {
+      .flex(1);
+      display: block;
+    }
 
     @media @mobile {
       font-size: 10px;
