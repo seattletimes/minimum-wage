@@ -11,13 +11,17 @@
   <body ng-app="minimum-wage">
 
     <div ng-controller="CityController" ng-cloak>
-      <div class="title">What would $15/hr look like across America?</div>
-      <div class="chatter">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam placerat leo vitae purus laoreet, nec porttitor dolor pellentesque. Cras tempor diam et sapien venenatis convallis. Etiam sit amet purus in eros aliquam efficitur. Aenean ut nunc eget felis vehicula consequat eu vel est.</div>
+      <div class="title">$15/hour wage: How much difference does it make?</div>
+      <div class="chatter">
+        <div>In Seattle and most other cities we looked at, an inexpensive apartment* is unaffordable to someone making the current minimum wage, far exceeding the accepted "rent burden" threshold of 30 percent of income.</div>
+        <div>At a $15 wage, an inexpensive apartment becomes affordable in most of these cities &mdash; though in the priciest ones, like Seattle, $15 still falls a bit short.</div>
+        <div class="tiny">*At the 25th percentile of all rents in each city.</div>
+      </div>
 
       <div class="toggle">
         <span class="toggle-label">Minimum wage:</span>
         <span class="button" ng-click="setWhen('')" ng-class="{ selected: when == '' }">Current</span>
-        <span class="button" ng-click="setWhen('15')" ng-class="{ selected: when == '15' }">$15</span>
+        <span class="button" ng-click="setWhen('15')" ng-class="{ selected: when == '15' }">$15/hour</span>
       </div>
 
       <div class="row">

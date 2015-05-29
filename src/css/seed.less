@@ -9,7 +9,7 @@
 @import "flexbox";
 
 body {
-  max-width: 600px;
+  max-width: 620px;
   font-family: @df-sans;
   font-size: 14px;
 
@@ -29,6 +29,16 @@ body {
   font-size: 15px;
   padding-bottom: 15px;
   font-family: @df-serif;
+
+  div {
+    padding-bottom: 10px;
+  }
+
+  .tiny {
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 0;
+  }
 }
 
 .toggle {
@@ -54,7 +64,7 @@ body {
   }
 
   &.selected {
-    background: @df-dark-gray;
+    background: @df-blue;
     color: white;
     cursor: default;
   }
