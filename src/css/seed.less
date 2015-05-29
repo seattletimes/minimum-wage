@@ -63,7 +63,7 @@ body {
 .row {
   .display-flex();
   padding-bottom: 5px;
-  max-width: 475px;
+  // max-width: 500px;
   margin: auto;
 
   &.flipping {
@@ -83,31 +83,42 @@ body {
   }
 
   .name {
-    .flex(0 0 98px);
+    .flex(0 0 103px);
     text-align: right;
     font-weight: bold;
+    padding-right: 10px;
 
     @media @mobile {
       .flex(0 0 92px);
+      padding-right: 5px;
     }
   }
 
   .rent {
-    .flex(0 0 90px);
+    .flex(0 0 89px);
     text-align: center;
 
     @media @mobile {
-      .flex(0 0 78px);
+      .flex(0 0 73px);
     }
   }
 
   .minwage {
-    .flex(0 0 62px);
-    padding-left: 10px;
+    .flex(0 0 68px);
     text-align: center;
 
     @media @mobile {
-      .flex(0 0 57px);
+      .flex(0 0 62px);
+    }
+  }
+
+  .monthly {
+    padding-left: 10px;
+    .flex(0 0 98px);
+    text-align: center;
+
+    @media @mobile {
+      display: none;
     }
   }
 

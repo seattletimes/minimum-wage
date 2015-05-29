@@ -22,16 +22,16 @@
 
       <div class="row">
         <div class="header name"></div>
-        <div class="header rent">Monthly Rent (Bottom 25%)</div>
-        <div class="header bar-container">
-          <span ng-if="when == ''">Current Monthly Salary</span>
-          <span ng-if="when == '15'">Projected Monthly Salary at $15/hr</span>
-        </div>
-        <div class="header minwage">Current Min. Wage</div>
+        <div class="header minwage">Current min. wage (hourly)</div>
+        <div class="header rent">Monthly rent (bottom 25%)</div>
+        <div class="header bar-container">Rent as % of income</div>
+        <div class="header monthly" ng-if="when == ''">Gross monthly income</div>
+        <div class="header monthly" ng-if="when == '15'">Gross monthly income at $15/hr</div>
       </div>
 
       <div class="row" ng-repeat="city in cities" flip>
         <div class="name">{{city.name}}</div>
+        <div class="minwage">${{city.minwage}}</div>
         <div class="rent">${{city.rent}}</div>
         <div class="bar-container">
           <div class="bar rent" delayed-style="{ width: city['percent' + when] + '%' }" ng-class="{ affordable: city['percent' + when] < 30 }">
@@ -40,9 +40,8 @@
             <div class="percent-label">{{city['percent' + when].split(".")[0]}}%</div>
           </div>
         </div>
-        <div class="minwage">
-          ${{city.minwage}}
-        </div>
+        <div class="monthly" ng-if="when == ''">${{city.monthly | number : 0}}</div>
+        <div class="monthly" ng-if="when == '15'">$2,400</div>
       </div>
     </div>
     <div class="source"><em>Sources: U.S. Census Bureau, Seattle Times reporting</em></div>
