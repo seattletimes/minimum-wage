@@ -33,7 +33,7 @@
           <div class="header monthly" ng-if="when == '15'"><span>Gross monthly income at $15/hr</span></div>
         </div>
 
-        <div class="row" ng-repeat="city in cities" flip>
+        <div class="row" ng-repeat="city in cities" ng-class="{highlighted: city.name == 'Seattle'}" flip>
           <div class="name">{{city.name}}</div>
           <div class="minwage">${{city.minwage}}</div>
           <div class="rent">${{city.rent}}</div>
